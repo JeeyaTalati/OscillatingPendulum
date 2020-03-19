@@ -18,7 +18,7 @@ function setup() {
 var chainoptions ={
   bodyA:ball,
   bodyB:log,
-  stiffness:0.004,
+  stiffness:1,
   length:100
 }
 chain=Constraint.create(chainoptions);
@@ -37,4 +37,14 @@ function draw() {
   strokeWeight (10);
   stroke("white");
   line (ball.position.x,ball.position.y,log.position.x,log.position.y);
+}
+function keyPressed(){
+  if (keyCode===32){
+    ball.position.x=mouseX;
+ball.position.y=mouseY;
+  }
+  else if (keyCode===10){
+    ball.position.x=220;
+    ball.position.y=200;
+  }
 }
